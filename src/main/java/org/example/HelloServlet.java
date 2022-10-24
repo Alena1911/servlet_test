@@ -19,10 +19,12 @@ public class HelloServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
 
         String name = request.getParameter("username");
-        //test
         if (name == null || name.equals("")) {
             try {
                 writer.println("<h1>Пожалуйста, вернитесь и введите имя</h1>");
+                writer.println("<form action=\"/servlet_test7/\" method=\"GET\">\n" +
+                        "    <input type=\"submit\" value=\"Вернуться\" />\n" +
+                        "</form>");
             }finally {
                 writer.close();
             }
